@@ -1,5 +1,6 @@
 console.log("here");
-let emotion = "neutral";
+let emotion = finalEmotionGbl;
+console.log(finalEmotionGbl);
 
 if (emotion === "happiness") {
 

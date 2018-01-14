@@ -504,3 +504,11 @@ modal
 	  display: none;
 	  text-align: left;
   }
+
+  .hide{
+	  display: none;
+  }
+
+  .btn{
+	  display: none;
+  }

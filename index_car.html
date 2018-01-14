@@ -42,7 +42,7 @@
 							</span>
 							</span>
 							<div class="row">
-								<div class="col-md-8">
+								<div class="col-md-9">
 									<div id="videoContainer">
 										<p>
 											Snap a photo of yourself!
@@ -51,8 +51,8 @@
 										<video width="100%" autoplay></video>
 									</div>
 								</div>
-								<div class="col-md-4">
-									<div class="emotions">
+								<div class="col-md-3">
+									<div class = "emotions">
 										<h3>Face Rectangle</h3>
 										<ul id="faceRectangle">
 											<!-- Will populate list with response content -->
@@ -63,7 +63,6 @@
 											<!-- Will populate list with response content -->
 										</ul>
 									</div>
-									<button type="button" id="respondBtn" class="btn">Claim your glow</button>
 								</div>
 							</div>
 						</div>
@@ -78,32 +77,33 @@
 			</p>
 
 			<h1>
-				<span>Glow</span> Up</h1>
+				<span>Jokes</span> by Dad</h1>
 
 			<div class="container">
 			</div>
 		</div>
-	</div>
+
 		<div class="arrow-separator arrow-white"></div>
 
 		<div class="fullwidth colour1 clearfix container">
 			<div id="countdown" class="bodycontainer clearfix" data-uk-scrollspy="{cls:'uk-animation-fade', delay: 300, repeat: true}">
-				<div id="responseContainer">
+				<div id="jokeContainer">
 					<pre id="json"></pre>
-					<img id="image" />
+					<div id="catContainer">
+						<a href="http://thecatapi.com">
+							<img src="http://thecatapi.com/api/images/get?format=src&type=png">
+						</a>
+					</div>
 				</div>
 			</div>
 		</div>
-	</div>
 
 	<script src="js/jquery.js"></script>
 	<script src="js/uikit.scrollspy.js"></script>
 	<script src="js/scripts.js"></script>
 	<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.1.0/jquery.min.js"></script>
 	<script src="./bootstrap/js/bootstrap.min.js"></script>
-	<!--
 	<script src="./js/content.js"></script>
-	-->
 	<script src="./js/lib.js"></script>
 	<script src="./js/webcam.js"></script>
 
