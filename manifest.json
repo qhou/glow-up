@@ -6,20 +6,18 @@
     "chrome_url_overrides": {
         "newtab": "index.html"
     },
-
-    "content_scripts": [
-        {
-          "matches": [
-            "<all_urls>"
-          ],
-          "js": ["content.js"]
-        }
-      ],
-
     "manifest_version": 2,
+    "content_security_policy": "script-src 'self' https://ajax.googleapis.com; object-src 'self'",
     "page_action": {
         "default_icon": "img.png",
         "default_popup": "popup.html",
-        "default_title": "First Chrome Extension"
-    }
+        "default_title": "Jokes by Dad"
+    },
+    "web_accessible_resources": [
+        "css/reset.css",
+        "css/uikit.scrollspy.css",
+        "css/owlcarousel.css",
+        "fonts/fontawesome/font-awesome.css",
+        "http://fonts.googleapis.com/css?family=Source+Sans+Pro:300,300italic,400,400italic,600,600italic,700,700italic,900,900italic"
+    ]
 }
