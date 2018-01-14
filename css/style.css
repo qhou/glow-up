@@ -133,7 +133,7 @@ modal
 				}
 	h2
 	{
-		font-size: 38px;
+		font-size: 28px;
 		line-height: 38px;
 	}
 		
@@ -487,8 +487,15 @@ modal
 	.modal-xl {
 	width: 100%;
 	 max-width:1200px;
-	 max-height: 100%;
+	 min-height: 100%;
+	 height: auto;
+	 overflow-y: auto;
 	}
+  }
+
+  .modal-body{
+	max-height: calc(100vh - 210px);
+    overflow-y: auto;
   }
   
   #videoContainer{
@@ -511,4 +518,6 @@ modal
 
   .btn{
 	  display: none;
+	  color: #149077;
+	  background-color: rgba(153, 153, 153, 0.2);
   }
