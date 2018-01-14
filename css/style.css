@@ -499,3 +499,8 @@ modal
 	  padding: 100px 0px 0px 0px;
 	  max-height: 100%;
   }
+
+  #emotions{
+	  display: none;
+	  text-align: left;
+  }

@@ -1,3 +1,4 @@
+
 //document.getElementById("webcam").addEventListener("click", webcamTrigger);
 $(window).on('load',function(){
     $('#webCamModal').modal('show');
@@ -9,6 +10,10 @@ var video = document.querySelector('video')
     , canvas;
 var BASE64_MARKER = ';base64,';
 var uploadedImgUrl;
+/* var prop = ""
+var highestScore = ""
+var finalEmotion = "" */
+
 /**
  *  generates a still frame image from the stream in the <video>
  *  appends the image to the <body>
@@ -55,6 +60,7 @@ function uploadToImgur() {
 }
 
 function getEmotion() {
+   // $("#emotions").show();
     var params = {};
     var varURLFromForm = $("#basic-url")[0].value;
     console.log("URL is: " + '{"url":' + "\""+ varURLFromForm + "\""+'}');
@@ -103,6 +109,7 @@ function getEmotion() {
                 finalEmotion = prop;
             }
         }
+
         console.log("final is : " + highestScore);
         console.log("final emotion is: " + finalEmotion);
         var highestScore = $('#hScore');
