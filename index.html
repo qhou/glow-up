@@ -9,7 +9,7 @@
 <head>
 	<!-- Website Template designed by www.downloadwebsitetemplates.co.uk -->
 	<meta charset="UTF-8">
-	<title>Jokes by Dad</title>
+	<title>Glow Up</title>
 	<meta name="description" content="">
 	<meta name="keywords" content="">
 	<meta content="width=device-width, initial-scale=1, maximum-scale=1, user-scalable=no" name="viewport">
@@ -30,47 +30,6 @@
 
 <body id="backtotop">
 	<div class="fullwidth clearfix">
-		<div id="webCamModal" class="modal bs-example-modal-lg" tabindex="-1" role="dialog" aria-labelledby="myLargeModalLabel">
-			<div class="modal-dialog modal-xl" role="document">
-				<div class="modal-content">
-					<div class="modal-header">
-						<div class="modal-title">
-							<h3>
-								<span class="fa sm fa-smile-o">
-									<span>
-										<span>Glow</span> Up</h3>
-							</span>
-							</span>
-							<div class="row">
-								<div class="col-md-8">
-									<div id="videoContainer">
-										<p>
-											Snap a photo of yourself!
-											<br> We'll give you the best remedy for your current emotion.
-										</p>
-										<video width="100%" autoplay></video>
-									</div>
-								</div>
-								<div class="col-md-4">
-									<div class="emotions">
-										<h3>Face Rectangle</h3>
-										<ul id="faceRectangle">
-											<!-- Will populate list with response content -->
-										</ul>
-
-										<h3>Emotions</h3>
-										<ul id="scores">
-											<!-- Will populate list with response content -->
-										</ul>
-									</div>
-									<button type="button" id="respondBtn" class="btn">Claim your glow</button>
-								</div>
-							</div>
-						</div>
-					</div>
-				</div>
-			</div>
-		</div>
 		<div id="topcontainer" class="bodycontainer clearfix" data-uk-scrollspy="{cls:'uk-animation-fade', delay: 300, repeat: true}">
 
 			<p>
@@ -84,13 +43,60 @@
 			</div>
 		</div>
 	</div>
-		<div class="arrow-separator arrow-white"></div>
+	<div class="arrow-separator arrow-white"></div>
 
-		<div class="fullwidth colour1 clearfix container">
-			<div id="countdown" class="bodycontainer clearfix" data-uk-scrollspy="{cls:'uk-animation-fade', delay: 300, repeat: true}">
-				<div id="responseContainer">
-					<pre id="json"></pre>
-					<img id="image" />
+	<div class="fullwidth colour1 clearfix container">
+		<div id="countdown" class="bodycontainer clearfix" data-uk-scrollspy="{cls:'uk-animation-fade', delay: 300, repeat: true}">
+			<div id="responseContainer">
+				<pre id="json"></pre>
+				<img id="response" />
+			</div>
+		</div>
+	</div>
+	</div>
+
+
+
+
+	<div id="webCamModal" class="modal bs-example-modal-lg" tabindex="-1" role="dialog" aria-labelledby="myLargeModalLabel">
+		<div class="modal-dialog modal-xl" role="document">
+			<div class="modal-content">
+				<div class="modal-header">
+					<div class="modal-title">
+						<h3>
+							<span class="fa sm fa-smile-o">
+								<span>
+									<span>Glow</span> Up</h3>
+						</span>
+						</span>
+						<div class="modal-body">
+							<div class="row">
+								<div class="col-md-8">
+									<div id="videoContainer">
+										<p>
+											Snap a photo of yourself!
+											<br> We'll give you the best remedy for your current emotion.
+										</p>
+										<video width="100%" autoplay></video>
+									</div>
+								</div>
+								<div class="col-md-4">
+									<div class="emotions">
+										<h2>Face Rectangle</h2>
+										<ul id="faceRectangle">
+											<!-- Will populate list with response content -->
+										</ul>
+
+										<h2>Emotions</h2>
+										<ul id="scores">
+											<!-- Will populate list with response content -->
+										</ul>
+									</div>
+									<button type="button" id="respondBtn" class="btn">Claim your glow</button>
+								</div>
+							</div>
+						</div>
+					</div>
 				</div>
 			</div>
 		</div>
