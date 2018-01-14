@@ -1,0 +1,90 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Glow Up Tracker</title>
+    <meta content="width=device-width, initial-scale=1, maximum-scale=1, user-scalable=no" name="viewport">
+    <script src="./js/lib.js"></script>
+    <script src="https://canvasjs.com/assets/script/canvasjs.min.js"></script>
+    <script type="text/javascript">
+
+        window.onload = function () {
+            user = "alex";
+            lib.carhuang.feelyglad.requestmood(user, (err, result) = > {
+                if (err) {
+                    console.log("Error: " + err);
+                } else {
+                    var anger = 0;
+            var contempt = 0;
+            var disgust = 0;
+            var fear = 0;
+            var happiness = 0;
+            var neutral = 0;
+            var sadness = 0;
+            var surprise = 0;
+            console.log(result);
+            for (date in result) {
+                for (emotion in result[date]) {
+                    switch (emotion) {
+                        case "anger":
+                            anger += result[date][emotion];
+                            break;
+                        case "contempt":
+                            contempt += result[date][emotion];
+                            break;
+                        case "disgust":
+                            disgust += result[date][emotion];
+                            break;
+                        case "fear":
+                            fear += result[date][emotion];
+                            break;
+                        case "happiness":
+                            happiness += result[date][emotion];
+                            break;
+                        case "neutral":
+                            neutral += result[date][emotion];
+                            break;
+                        case "sadness":
+                            sadness += result[date][emotion];
+                            break;
+                        case "surprise":
+                            surprise += result[date][emotion];
+                            break;
+                    }
+                }
+            }
+            var pie = new CanvasJS.Chart("piechartContainer", {
+                title: {
+                    text: "Overall Mood"
+                },
+                data: [
+                    {
+                        // Change type to "doughnut", "line", "splineArea", etc.
+                        type: "pie",
+                        dataPoints: [
+                            {label: "anger", y: anger},
+                            {label: "contempt", y: contempt},
+                            {label: "disgust", y: disgust},
+                            {label: "fear", y: fear},
+                            {label: "happiness", y: happiness},
+                            {label: "neutral", y: neutral},
+                            {label: "sadness", y: sadness},
+                            {label: "surprise", y: surprise}
+                        ]
+                    }
+                ]
+            });
+            pie.render();
+        }
+        });
+        }
+
+
+    </script>
+</head>
+<body>
+<div id="piechartContainer" style="height: 300px; width: 50%;"></div>
+<div id="bargraphContainer" style="height: 300px; width: 50%;"></div>
+
+</body>
+</html>
