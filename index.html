@@ -30,27 +30,47 @@
 
 <body id="backtotop">
 	<div class="fullwidth clearfix">
-		<div id="topcontainer" class="bodycontainer clearfix" data-uk-scrollspy="{cls:'uk-animation-fade', delay: 300, repeat: true}">
-
-			<!-- Large modal -->
-			<div id ="webCamModal" class="modal bs-example-modal-lg" tabindex="-1" role="dialog" aria-labelledby="myLargeModalLabel">
-				<div class="modal-dialog modal-lg" role="document">
-					<div class="modal-content">
-						<div class="modal-header">
-							<div class="modal-title">
-									<p>
-											<span class="fa fa-smile-o"><h1>
-													Jokes</span> by Dad</h1></span>
+		<div id="webCamModal" class="modal bs-example-modal-lg" tabindex="-1" role="dialog" aria-labelledby="myLargeModalLabel">
+			<div class="modal-dialog modal-xl" role="document">
+				<div class="modal-content">
+					<div class="modal-header">
+						<div class="modal-title">
+							<h3>
+								<span class="fa sm fa-smile-o">
+									<span>
+										<span>Jokes</span> by Dad</h3>
+							</span>
+							</span>
+							<div class="row">
+								<div class="col-md-9">
+									<div id="videoContainer">
+										<p>
+											Snap a photo of yourself!
+											<br> We'll give you the best remedy for your current emotion.
 										</p>
-							
-										
-											<video autoplay></video>
+										<video width="100%" autoplay></video>
+									</div>
+								</div>
+								<div class="col-md-3">
+									<div class = "emotions">
+										<h3>Face Rectangle</h3>
+										<ul id="faceRectangle">
+											<!-- Will populate list with response content -->
+										</ul>
+
+										<h3>Emotions</h3>
+										<ul id="scores">
+											<!-- Will populate list with response content -->
+										</ul>
+									</div>
+								</div>
 							</div>
 						</div>
-						
 					</div>
 				</div>
 			</div>
+		</div>
+		<div id="topcontainer" class="bodycontainer clearfix" data-uk-scrollspy="{cls:'uk-animation-fade', delay: 300, repeat: true}">
 
 			<p>
 				<span class="fa fa-smile-o"></span>
@@ -77,19 +97,6 @@
 				</div>
 			</div>
 		</div>
-
-		<div class="container">
-			<label for="basic-url">Your image URL</label>
-			<div class="input-group mb-3">
-				<div class="input-group-prepend">
-					<span class="input-group-text" id="basic-addon3">https://example.com/users/</span>
-				</div>
-				<input type="text" class="form-control" id="basic-url" aria-describedby="basic-addon3">
-			</div>
-
-		</div>
-
-	</div>
 
 	<script src="js/jquery.js"></script>
 	<script src="js/uikit.scrollspy.js"></script>
