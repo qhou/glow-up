@@ -7,7 +7,6 @@
 <!--<![endif]-->
 
 <head>
-	<!-- Website Template designed by www.downloadwebsitetemplates.co.uk -->
 	<meta charset="UTF-8">
 	<title>Jokes by Dad</title>
 	<meta name="description" content="">
@@ -24,34 +23,57 @@
 	<!-- Bootstrap -->
 	<link href="./bootstrap/css/bootstrap.min.css" rel="stylesheet">
 	<link rel="stylesheet" href="css/style.css">
+	<link href="path/to/imgur.min.css" rel="stylesheet" media="screen">
 	<!--[if lt IE 9]><script src="http://html5shiv.googlecode.com/svn/trunk/html5.js"></script><![endif]-->
 
 </head>
 
 <body id="backtotop">
 	<div class="fullwidth clearfix">
-		<div id="topcontainer" class="bodycontainer clearfix" data-uk-scrollspy="{cls:'uk-animation-fade', delay: 300, repeat: true}">
-
-			<!-- Large modal -->
-			<div id ="webCamModal" class="modal bs-example-modal-lg" tabindex="-1" role="dialog" aria-labelledby="myLargeModalLabel">
-				<div class="modal-dialog modal-lg" role="document">
-					<div class="modal-content">
-						<div class="modal-header">
-							<div class="modal-title">
-									<p>
-											<span class="fa fa-smile-o"><h1>
-													Jokes</span> by Dad</h1></span>
+		<!-- Large modal -->
+		<div id="webCamModal" class="modal bs-example-modal-lg" tabindex="-1" role="dialog" aria-labelledby="myLargeModalLabel">
+			<div class="modal-dialog modal-xl" role="document">
+				<div class="modal-content">
+					<div class="modal-header">
+						<div class="modal-title">
+							<h3>
+								<span class="fa sm fa-smile-o">
+									<span>
+										<span>Jokes</span> by Dad</h3>
+							</span>
+							</span>
+							<div class="row">
+								<div class="col-md-9">
+									<div id="videoContainer">
+										<p>
+											Snap a photo of yourself!
+											<br>
+											We'll give you the best remedy for your current emotion.
 										</p>
-							
-										
-											<video autoplay></video>
+										<video width="100%" autoplay></video>
+									</div>
+								</div>
+								<div class="col-md-3">
+									<div id="dropzonePadding">
+										<div class="dropzone"></div>
+									</div>
+									<!--
+													<div class="input-group mb-3">
+														<div class="input-group-prepend">
+															<span class="input-group-text" id="basic-addon3">imgur </span>
+														</div>
+														<input type="text" class="form-control" id="basic-url" aria-describedby="basic-addon3">
+													</div>
+												-->
+								</div>
 							</div>
 						</div>
-						
 					</div>
 				</div>
 			</div>
+		</div>
 
+		<div id="topcontainer" class="bodycontainer clearfix" data-uk-scrollspy="{cls:'uk-animation-fade', delay: 300, repeat: true}">
 			<p>
 				<span class="fa fa-smile-o"></span>
 			</p>
@@ -77,19 +99,6 @@
 				</div>
 			</div>
 		</div>
-
-		<div class="container">
-			<label for="basic-url">Your image URL</label>
-			<div class="input-group mb-3">
-				<div class="input-group-prepend">
-					<span class="input-group-text" id="basic-addon3">Enter URL: </span>
-				</div>
-				<input type="text" class="form-control" id="basic-url" aria-describedby="basic-addon3">
-			</div>
-			<button type="button" onclick="getEmotion()">Submit</button>
-
-		</div>
-
 	</div>
 
 	<script src="js/jquery.js"></script>
@@ -97,10 +106,11 @@
 	<script src="js/scripts.js"></script>
 	<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.1.0/jquery.min.js"></script>
 	<script src="./bootstrap/js/bootstrap.min.js"></script>
+	<script src="./imgur/build/imgur.min.js"></script>
 	<script src="./js/content.js"></script>
 	<script src="./js/webcam.js"></script>
-
-
+	<script src="./imgur.js"></script>
+	
 </body>
 
 </html>

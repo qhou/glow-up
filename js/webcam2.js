@@ -8,7 +8,6 @@ var takenImg;
 var video = document.querySelector('video')
     , canvas;
 var BASE64_MARKER = ';base64,';
-var uploadedImgUrl;
 /**
  *  generates a still frame image from the stream in the <video>
  *  appends the image to the <body>
@@ -27,9 +26,11 @@ function takeSnapshot() {
     context.drawImage(video, 0, 0, width, height);
 
     img.src = canvas.toDataURL('image/png');
+    console.log("img is : " + img);
+    console.log("img.src is : " + img.src);
     document.getElementById("webCamModal").appendChild(img);
     takenImg = null;
-    takenImg = canvas.toDataURL();
+    takenImg = img;
 }
 
 function convertDataURIToBinary(dataURI) {
@@ -39,38 +40,34 @@ function convertDataURIToBinary(dataURI) {
     var rawLength = raw.length;
     var array = new Uint8Array(new ArrayBuffer(rawLength));
 
-    for (var i = 0; i < rawLength; i++) {
+    for (let i = 0; i < rawLength; i++) {
         array[i] = raw.charCodeAt(i);
     }
     return array;
 }
 
 function uploadToImgur() {
-    var uploadImg = takenImg.replace(/.*,/, '');
     $.ajax({
         url: 'https://api.imgur.com/3/image',
-        type: 'POST',
-        headers: { "Authorization": "Client-ID cc86a8de0e7c459" },
-        dataType: 'json',
+        type: 'post',
+        headers: {
+            Authorization: 'Client-ID <nwhacks18>'
+        },
         data: {
-            image:uploadImg
+            image: takenImg
         },
+        dataType: 'json',
         success: function (response) {
-            console.log(response.data.link);
-            uploadedImgUrl = null;
-            uploadedImgUrl = response.data.link;
-            getEmotion();
-        },
-        error: function (response) {
-            console.log(response);
+            if (response.success) {
+                window.location = response.data.link;
+            }
         }
     });
 }
 
 function getEmotion() {
     var params = {};
-    var varURLFromForm = $("#basic-url")[0].value;
-    console.log("URL is: " + '{"url":' + "\""+ varURLFromForm + "\""+'}');
+    var encodedImg = convertDataURIToBinary(takenImg.src);
     $.ajax({
         // NOTE: You must use the same location in your REST call as you used to obtain your subscription keys.
         //   For example, if you obtained your subscription keys from westcentralus, replace "westus" in the 
@@ -86,7 +83,7 @@ function getEmotion() {
         type: "POST",
         contentType: "application/octet-stream",
         // Request body
-        data: '{"url":' + "\""+ uploadedImgUrl + "\""+'}'
+        data: '{"url": "http://pluspng.com/img-png/png-selfie-girl-selfie-png-1496.png"}'
     }).done(function (data) {
         // Get face rectangle dimensions
         var faceRectangle = data[0].faceRectangle;
@@ -135,7 +132,7 @@ function webcamTrigger() {
             .then(function (stream) {
                 video.srcObject = stream;
                 video.addEventListener('click', takeSnapshot);
-                video.addEventListener('click', uploadToImgur);
+                video.addEventListener('click', getEmotion);
             })
             // permission denied:
             .catch(function (error) {

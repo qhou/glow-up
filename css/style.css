@@ -92,8 +92,45 @@ h1, h2, h3
 	font-weight: 300;
 	text-transform: uppercase;
 	color: #16A085;
+	font-family: inherit;
 }
 
+modal
+{
+	color: #444;
+
+}
+
+	.modal h3
+	{
+		letter-spacing: -1.5px;
+		color: #444;
+		font-weight: 100;
+		text-align: center;
+	}
+	
+		.modal h3 span
+		{
+			font-size: 50px;
+			line-height: 70px;
+			letter-spacing: -1.4px;
+			font-weight: 300;
+			text-align: center;
+		}
+			.modal h3 span span{
+				font-family: "Source Sans Pro", Arial, Helvetica, sans-serif;
+				letter-spacing: -1.5px;
+				color: #444;
+				font-size: 40px;
+				font-weight: 400;
+
+				}
+				.modal h3 span span span{
+					font-family: "Source Sans Pro", Arial, Helvetica, sans-serif;
+					letter-spacing: -1.5px;
+					color: #444;
+					font-weight: 100;
+				}
 	h2
 	{
 		font-size: 38px;
@@ -439,3 +476,26 @@ h1, h2, h3
 .container{
 	padding: 70px;
 }
+
+.sm{
+	font-size: 40px;
+	line-height: 90px;
+    color: #1abc9c;
+}
+
+@media (min-width: 768px) {
+	.modal-xl {
+	width: 100%;
+	 max-width:1200px;
+	 max-height: 100%;
+	}
+  }
+  
+  #videoContainer{
+	  padding: 0px 20px 20px 20px;
+  }
+
+  #dropzonePadding{
+	  padding: 100px 0px 0px 0px;
+	  max-height: 100%;
+  }
