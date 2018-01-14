@@ -1,15 +1,22 @@
 {
-    "manifest_version": 2,
-    "name": "Custom Google Homepage",
-    "description": "This extension shows a Google Image search result for the current page",
-    "version": "1.0",
+    "name": "Blank new tab page",
+    "description": "Override the new tab page with a blank one",
+    "version": "0.2",
+    "incognito": "split",
+    "chrome_url_overrides": {
+        "newtab": "index.html"
+    },
+
     "content_scripts": [
         {
-            "matches": ["<all_urls>"],
-            "js": ["content.js"],
-            "css": ["main.css"]
+          "matches": [
+            "<all_urls>"
+          ],
+          "js": ["content.js"]
         }
-    ],
+      ],
+
+    "manifest_version": 2,
     "page_action": {
         "default_icon": "img.png",
         "default_popup": "popup.html",
