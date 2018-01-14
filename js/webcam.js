@@ -14,6 +14,7 @@ var uploadedImgUrl;
 var highestScore = ""
 var finalEmotion = "" */
 
+
 /**
  *  generates a still frame image from the stream in the <video>
  *  appends the image to the <body>
@@ -62,8 +63,8 @@ function uploadToImgur() {
 function getEmotion() {
    // $("#emotions").show();
     var params = {};
-    var varURLFromForm = $("#basic-url")[0].value;
-    console.log("URL is: " + '{"url":' + "\""+ varURLFromForm + "\""+'}');
+    //var varURLFromForm = $("#basic-url")[0].value;
+    //console.log("URL is: " + '{"url":' + "\""+ varURLFromForm + "\""+'}');
     $.ajax({
         // NOTE: You must use the same location in your REST call as you used to obtain your subscription keys.
         //   For example, if you obtained your subscription keys from westcentralus, replace "westus" in the 
@@ -113,6 +114,14 @@ function getEmotion() {
         console.log("final is : " + highestScore);
         console.log("final emotion is: " + finalEmotion);
         var highestScore = $('#hScore');
+        var user = "alex";
+        lib.carhuang.feelyglad(user, finalEmotion, (err, result) => {
+            if (err) {
+                console.log("feelyerr: " + err);
+            } else {
+                console.log(result);
+            }
+        });
         return finalEmotion;
     }).fail(function (err) {
         alert("Error: " + JSON.stringify(err));
