@@ -186,8 +186,7 @@ function emotionalResponse() {
                 return response.json();
             }).then(function (my_result) {
                 console.log("gif result: " + my_result.data.image_url);
-                $('#fetch-result').html('<img src="' + my_result.data.image_url + '">');
-                document.querySelector("#response").src = my_result.data.image_url;
+                $('#json').html('<img src="' + my_result.data.image_url + '">');
             });
         });
     }
@@ -199,8 +198,7 @@ function emotionalResponse() {
                 return response.json();
             }).then(function (my_result) {
                 console.log("gif result: " + my_result.data.image_url);
-                $('#fetch-result').html('<img src="' + my_result.data.image_url + '">');
-                document.querySelector("#response").src = my_result.data.image_url;
+                $('#json').html('<img src="' + my_result.data.image_url + '">');
             });
         });
     }
@@ -212,8 +210,7 @@ function emotionalResponse() {
                 return response.json();
             }).then(function (my_result) {
                 console.log("gif result: " + my_result.data.image_url);
-                $('#fetch-result').html('<img src="' + my_result.data.image_url + '">');
-                document.querySelector("#response").src = my_result.data.image_url;
+                $('#json').html('<img src="' + my_result.data.image_url + '">');
             });
         });
     }
@@ -225,8 +222,7 @@ function emotionalResponse() {
                 return response.json();
             }).then(function (my_result) {
                 console.log("gif result: " + my_result.data.image_url);
-                $('#fetch-result').html('<img src="' + my_result.data.image_url + '">');
-                document.querySelector("#response").src = my_result.data.image_url;
+                $('#json').html('<img src="' + my_result.data.image_url + '">');
             });
         });
     }
@@ -238,8 +234,7 @@ function emotionalResponse() {
                 return response.json();
             }).then(function (my_result) {
                 console.log("gif result: " + my_result.data.image_url);
-                $('#fetch-result').html('<img src="' + my_result.data.image_url + '">');
-                document.querySelector("#response").src = my_result.data.image_url;
+                $('#json').html('<img src="' + my_result.data.image_url + '">');
             });
         });
     }
@@ -251,8 +246,7 @@ function emotionalResponse() {
                 return response.json();
             }).then(function (my_result) {
                 console.log("gif result: " + my_result.data.image_url);
-                $('#fetch-result').html('<img src="' + my_result.data.image_url + '">');
-                document.querySelector("#response").src = my_result.data.image_url;
+                $('#json').html('<img src="' + my_result.data.image_url + '">');
             });
         });
     }
@@ -264,8 +258,7 @@ function emotionalResponse() {
                 return response.json();
             }).then(function (my_result) {
                 console.log("gif result: " + my_result.data.image_url);
-                $('#fetch-result').html('<img src="' + my_result.data.image_url + '">');
-                document.querySelector("#response").src = my_result.data.image_url;
+                $('#json').html('<img src="' + my_result.data.image_url + '">');
             });
         });
     }
