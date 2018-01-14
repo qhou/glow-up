@@ -1,7 +1,7 @@
 console.log("here");
-let emotion = "happy";
+let emotion = "neutral";
 
-if (emotion === "happy") {
+if (emotion === "happiness") {
 
     const url = 'https://icanhazdadjoke.com/';
 
@@ -31,3 +31,87 @@ if (emotion === "happy") {
 } else if (emotion === "sad") {
   //  $("#catContainer").show();
 }
+else if (emotion === "neutral") {
+    q = "dramatic"; // search query
+    jQuery(function($) {
+        fetch('http://api.giphy.com/v1/gifs/random?api_key=dc6zaTOxFJmzC&tag='+q).then(function(response) {
+            return response.json();
+        }).then(function(my_result) {
+            console.log("gif result: " + my_result.data.image_url);
+            $('#fetch-result').html('<img src="'+my_result.data.image_url+'">');
+        });
+    });
+}
+
+else if (emotion === "anger") {
+    q = "anger"; // search query
+    jQuery(function($) {
+        fetch('http://api.giphy.com/v1/gifs/random?api_key=dc6zaTOxFJmzC&tag='+q).then(function(response) {
+            return response.json();
+        }).then(function(my_result) {
+            console.log("gif result: " + my_result.data.image_url);
+            $('#fetch-result').html('<img src="'+my_result.data.image_url+'">');
+        });
+    });
+}
+
+else if (emotion === "contempt") {
+    q = "contempt"; // search query
+    jQuery(function($) {
+        fetch('http://api.giphy.com/v1/gifs/random?api_key=dc6zaTOxFJmzC&tag='+q).then(function(response) {
+            return response.json();
+        }).then(function(my_result) {
+            console.log("gif result: " + my_result.data.image_url);
+            $('#fetch-result').html('<img src="'+my_result.data.image_url+'">');
+        });
+    });
+}
+
+else if (emotion === "disgust") {
+    q = "disgust"; // search query
+    jQuery(function($) {
+        fetch('http://api.giphy.com/v1/gifs/random?api_key=dc6zaTOxFJmzC&tag='+q).then(function(response) {
+            return response.json();
+        }).then(function(my_result) {
+            console.log("gif result: " + my_result.data.image_url);
+            $('#fetch-result').html('<img src="'+my_result.data.image_url+'">');
+        });
+    });
+}
+
+else if (emotion === "fear") {
+    q = "fear"; // search query
+    jQuery(function($) {
+        fetch('http://api.giphy.com/v1/gifs/random?api_key=dc6zaTOxFJmzC&tag='+q).then(function(response) {
+            return response.json();
+        }).then(function(my_result) {
+            console.log("gif result: " + my_result.data.image_url);
+            $('#fetch-result').html('<img src="'+my_result.data.image_url+'">');
+        });
+    });
+}
+
+else if (emotion === "sadness") {
+    q = "crying"; // search query
+    jQuery(function($) {
+        fetch('http://api.giphy.com/v1/gifs/random?api_key=dc6zaTOxFJmzC&tag='+q).then(function(response) {
+            return response.json();
+        }).then(function(my_result) {
+            console.log("gif result: " + my_result.data.image_url);
+            $('#fetch-result').html('<img src="'+my_result.data.image_url+'">');
+        });
+    });
+}
+
+else if (emotion === "suprise") {
+    q = "suprise"; // search query
+    jQuery(function($) {
+        fetch('http://api.giphy.com/v1/gifs/random?api_key=dc6zaTOxFJmzC&tag='+q).then(function(response) {
+            return response.json();
+        }).then(function(my_result) {
+            console.log("gif result: " + my_result.data.image_url);
+            $('#fetch-result').html('<img src="'+my_result.data.image_url+'">');
+        });
+    });
+}
+
