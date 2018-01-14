@@ -8,6 +8,7 @@ var takenImg;
 var video = document.querySelector('video')
     , canvas;
 var BASE64_MARKER = ';base64,';
+var uploadedImgUrl;
 /**
  *  generates a still frame image from the stream in the <video>
  *  appends the image to the <body>
@@ -28,7 +29,7 @@ function takeSnapshot() {
     img.src = canvas.toDataURL('image/png');
     document.getElementById("webCamModal").appendChild(img);
     takenImg = null;
-    takenImg = img;
+    takenImg = canvas.toDataURL();
 }
 
 function convertDataURIToBinary(dataURI) {
@@ -45,20 +46,23 @@ function convertDataURIToBinary(dataURI) {
 }
 
 function uploadToImgur() {
+    var uploadImg = takenImg.replace(/.*,/, '');
     $.ajax({
         url: 'https://api.imgur.com/3/image',
-        type: 'post',
-        headers: {
-            Authorization: 'Client-ID <nwhacks18>'
-        },
-        data: {
-            image: takenImg
-        },
+        type: 'POST',
+        headers: { "Authorization": "Client-ID cc86a8de0e7c459" },
         dataType: 'json',
+        data: {
+            image:uploadImg
+        },
         success: function (response) {
-            if (response.success) {
-                window.location = response.data.link;
-            }
+            console.log(response.data.link);
+            uploadedImgUrl = null;
+            uploadedImgUrl = response.data.link;
+            getEmotion();
+        },
+        error: function (response) {
+            console.log(response);
         }
     });
 }
@@ -82,7 +86,7 @@ function getEmotion() {
         type: "POST",
         contentType: "application/octet-stream",
         // Request body
-        data: '{"url":' + "\""+ varURLFromForm + "\""+'}'
+        data: '{"url":' + "\""+ uploadedImgUrl + "\""+'}'
     }).done(function (data) {
         // Get face rectangle dimensions
         var faceRectangle = data[0].faceRectangle;
@@ -131,6 +135,7 @@ function webcamTrigger() {
             .then(function (stream) {
                 video.srcObject = stream;
                 video.addEventListener('click', takeSnapshot);
+                video.addEventListener('click', uploadToImgur);
             })
             // permission denied:
             .catch(function (error) {
