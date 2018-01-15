@@ -2739,15 +2739,7 @@ var Tab = function ($) {
  * --------------------------------------------------------------------------
  */
 
-var Tooltip = function ($) {
 
-  /**
-   * Check for Tether dependency
-   * Tether - http://tether.io/
-   */
-  if (typeof Tether === 'undefined') {
-    throw new Error('Bootstrap tooltips require Tether (http://tether.io/)');
-  }
 
   /**
    * ------------------------------------------------------------------------

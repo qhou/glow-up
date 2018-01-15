@@ -40,6 +40,9 @@
 				<span>Glow</span> Up</h1>
 
 			<div class="container">
+				<p>Here's you and your glow: it's a</p>
+				<div id ="gift">
+				</div>
 			</div>
 		</div>
 	</div>
@@ -55,9 +58,6 @@
 	</div>
 	</div>
 
-
-
-
 	<div id="webCamModal" class="modal bs-example-modal-lg" tabindex="-1" role="dialog" aria-labelledby="myLargeModalLabel">
 		<div class="modal-dialog modal-xl" role="document">
 			<div class="modal-content">
@@ -69,34 +69,44 @@
 									<span>Glow</span> Up</h3>
 						</span>
 						</span>
-						<div class="modal-body">
-							<div class="row">
-								<div class="col-md-8">
-									<div id="videoContainer">
-										<p>
-											Snap a photo of yourself!
-											<br> We'll give you the best remedy for your current emotion.
-										</p>
-										<video width="100%" autoplay></video>
-									</div>
-								</div>
-								<div class="col-md-4">
-									<div class="emotions">
-										<h2>Face Rectangle</h2>
-										<ul id="faceRectangle">
-											<!-- Will populate list with response content -->
-										</ul>
-
-										<h2>Emotions</h2>
-										<ul id="scores">
-											<!-- Will populate list with response content -->
-										</ul>
-									</div>
-									<button type="button" id="respondBtn" class="btn">Claim your glow</button>
-								</div>
+					</div>
+				</div>
+				<div class="modal-body">
+					<div class="row">
+						<div class="col-md-8">
+							<div id="videoContainer">
+									<button type="button" id="snapPhoto" class="btn">Snap a photo</button>
+								<p>
+									Click on your face once to snap a photo!
+									<br> We'll give you the best remedy for your current emotion.
+								</p>
+								<video id="video" width="100%" autoplay></video>
 							</div>
 						</div>
+						<div class="col-md-4">
+							<div class="emotions">
+								<h2>Face Rectangle</h2>
+								<ul id="faceRectangle">
+									<!-- Will populate list with response content -->
+								</ul>
+
+								<h2>Emotions</h2>
+								<ul id="scores">
+									<!-- Will populate list with response content -->
+								</ul>
+								<div>
+									<div id="loadingContainer">
+										<p> Photo taken!</p>
+										<img id="loading" src="load.gif"></img>
+									</div>
+								</div>
+							</div>
+							<button type="button" id="respondBtn" class="btn">Claim your glow</button>
+						</div>
+
 					</div>
+				</div>
+				<div class="modal-footer">
 				</div>
 			</div>
 		</div>
@@ -111,7 +121,7 @@
 	<script src="./js/content.js"></script>
 	-->
 	<script src="./js/lib.js"></script>
-	<script src="./js/webcam.js"></script>
+	<script src="./js/content.js"></script>
 
 
 </body>

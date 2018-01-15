@@ -1,6 +1,6 @@
 {
-    "name": "Blank new tab page",
-    "description": "Override the new tab page with a blank one",
+    "name": "Glow Up",
+    "description": "Glow up analyzes your emotion when you open a new tab, and provides the best mood remedies, including dad jokes and puppy giphys",
     "version": "0.2",
     "incognito": "split",
     "chrome_url_overrides": {
@@ -11,7 +11,7 @@
     "page_action": {
         "default_icon": "img.png",
         "default_popup": "popup.html",
-        "default_title": "Jokes by Dad"
+        "default_title": "Glow Up"
     },
     "web_accessible_resources": [
         "css/reset.css",

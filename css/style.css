@@ -87,7 +87,7 @@ h1, h2, h3
 {
 	font-size: 60px;
 	line-height: 60px;
-	margin: 0 0 20px 0;
+	margin: 0 0 0 0;
 	letter-spacing: -1px;
 	font-weight: 300;
 	text-transform: uppercase;
@@ -107,6 +107,7 @@ modal
 		color: #444;
 		font-weight: 100;
 		text-align: center;
+		padding-left: 10px;
 	}
 	
 		.modal h3 span
@@ -468,13 +469,8 @@ modal
 	
 }
 
-
-#catContainer{
-    display: none;
-}
-
 .container{
-	padding: 70px;
+	padding: 10px;
 }
 
 .sm{
@@ -487,15 +483,12 @@ modal
 	.modal-xl {
 	width: 100%;
 	 max-width:1200px;
-	 min-height: 100%;
 	 height: auto;
-	 overflow-y: auto;
 	}
   }
 
   .modal-body{
 	max-height: calc(100vh - 210px);
-    overflow-y: auto;
   }
   
   #videoContainer{
@@ -512,6 +505,10 @@ modal
 	  text-align: left;
   }
 
+  #emotions p{
+	  font-size: 10px;
+  }
+
   .hide{
 	  display: none;
   }
@@ -520,4 +517,24 @@ modal
 	  display: none;
 	  color: #149077;
 	  background-color: rgba(153, 153, 153, 0.2);
+  }
+
+  .modal-content{
+	overflow-y: auto;
+  }
+
+  #loadingContainer{
+	display: none;
+  }
+
+  #loading{
+	width: 70px;
+  }
+
+  .modal-title{
+	  text-align: center;
+  }
+
+  video:hover{
+	  cursor: pointer;
   }

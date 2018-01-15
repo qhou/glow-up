@@ -28,11 +28,12 @@ function takeSnapshot() {
 
     context = canvas.getContext('2d');
     context.drawImage(video, 0, 0, width, height);
-
+    $("#responseContainer").hide();
     img.src = canvas.toDataURL('image/png');
-    document.getElementById("webCamModal").appendChild(img);
+    //document.getElementById("webCamModal").appendChild(img);
     takenImg = null;
     takenImg = canvas.toDataURL();
+    $("#loadingContainer").show();
 }
 
 function uploadToImgur() {
@@ -81,6 +82,7 @@ function getEmotion() {
         var faceRectangle = data[0].faceRectangle;
         var faceRectangleList = $('#faceRectangle');
 
+        $("#loadingContainer").hide();
         // Append to DOM
         for (var prop in faceRectangle) {
             faceRectangleList.append("<li> " + prop + ": " + faceRectangle[prop] + "</li>");
@@ -140,6 +142,8 @@ function webcamTrigger() {
             // permission granted:
             .then(function (stream) {
                 video.srcObject = stream;
+                //button.addEventListener('click',takeSnapshot);
+                //button.addEventListener('click',uploadToImgur);
                 video.addEventListener('click', takeSnapshot);
                 video.addEventListener('click', uploadToImgur);
             })
@@ -154,6 +158,7 @@ function emotionalResponse() {
     console.log(emotion);
 
     if (emotion === "happiness") {
+        q = "Dad joke";
 
         const url = 'https://icanhazdadjoke.com/';
 
@@ -174,98 +179,104 @@ function emotionalResponse() {
             let joke = j.joke;
             console.log(joke);
 
-            document.getElementById("json").innerHTML =
+            document.getElementById("gift").innerHTML = q;
+            document.getElementById("json").innerHTML = 
                 JSON.stringify(joke, undefined, 2);
         }).catch(function (error) {
             console.log(error);
         });
     } else if (emotion === "neutral") {
-        q = "dramatic"; // search query
+        q = "rainbow"; // search query
         jQuery(function ($) {
             fetch('http://api.giphy.com/v1/gifs/random?api_key=dc6zaTOxFJmzC&tag=' + q).then(function (response) {
                 return response.json();
             }).then(function (my_result) {
                 console.log("gif result: " + my_result.data.image_url);
+                document.getElementById("gift").innerHTML = q;
                 $('#json').html('<img src="' + my_result.data.image_url + '">');
             });
         });
-    }
-
-    else if (emotion === "anger") {
-        q = "anger"; // search query
+    } else if (emotion === "anger") {
+        q = "calm"; // search query
         jQuery(function ($) {
             fetch('http://api.giphy.com/v1/gifs/random?api_key=dc6zaTOxFJmzC&tag=' + q).then(function (response) {
                 return response.json();
             }).then(function (my_result) {
                 console.log("gif result: " + my_result.data.image_url);
+                document.getElementById("gift").innerHTML = q;
                 $('#json').html('<img src="' + my_result.data.image_url + '">');
             });
         });
     }
 
     else if (emotion === "contempt") {
-        q = "contempt"; // search query
+        q = "thumbsup"; // search query
         jQuery(function ($) {
             fetch('http://api.giphy.com/v1/gifs/random?api_key=dc6zaTOxFJmzC&tag=' + q).then(function (response) {
                 return response.json();
             }).then(function (my_result) {
                 console.log("gif result: " + my_result.data.image_url);
+                document.getElementById("gift").innerHTML = q;
                 $('#json').html('<img src="' + my_result.data.image_url + '">');
             });
         });
     }
 
     else if (emotion === "disgust") {
-        q = "disgust"; // search query
+        q = "disgusting"; // search query
         jQuery(function ($) {
             fetch('http://api.giphy.com/v1/gifs/random?api_key=dc6zaTOxFJmzC&tag=' + q).then(function (response) {
                 return response.json();
             }).then(function (my_result) {
                 console.log("gif result: " + my_result.data.image_url);
+                document.getElementById("gift").innerHTML = q;
                 $('#json').html('<img src="' + my_result.data.image_url + '">');
             });
         });
     }
 
     else if (emotion === "fear") {
-        q = "fear"; // search query
+        q = "hide"; // search query
         jQuery(function ($) {
             fetch('http://api.giphy.com/v1/gifs/random?api_key=dc6zaTOxFJmzC&tag=' + q).then(function (response) {
                 return response.json();
             }).then(function (my_result) {
                 console.log("gif result: " + my_result.data.image_url);
+                document.getElementById("gift").innerHTML = q;
                 $('#json').html('<img src="' + my_result.data.image_url + '">');
             });
         });
     }
 
     else if (emotion === "sadness") {
-        q = "puppy"; // search query
+        q = "hug"; // search query
         jQuery(function ($) {
             fetch('http://api.giphy.com/v1/gifs/random?api_key=dc6zaTOxFJmzC&tag=' + q).then(function (response) {
                 return response.json();
             }).then(function (my_result) {
                 console.log("gif result: " + my_result.data.image_url);
+                document.getElementById("gift").innerHTML = q;
                 $('#json').html('<img src="' + my_result.data.image_url + '">');
             });
         });
     }
 
-    else if (emotion === "suprise") {
-        q = "suprise"; // search query
+    else if (emotion === "surprise") {
+        q = "omg"; // search query
         jQuery(function ($) {
             fetch('http://api.giphy.com/v1/gifs/random?api_key=dc6zaTOxFJmzC&tag=' + q).then(function (response) {
                 return response.json();
             }).then(function (my_result) {
                 console.log("gif result: " + my_result.data.image_url);
+                document.getElementById("gift").innerHTML = q;
                 $('#json').html('<img src="' + my_result.data.image_url + '">');
             });
         });
     }
 }
 
-function responder(){
-    $("#responseContainer").show();
+function responder() {
     $("#webCamModal").hide()
     $(".modal-backdrop").hide();
+    $("#responseContainer").show();
 }
